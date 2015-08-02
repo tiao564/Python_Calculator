@@ -17,11 +17,10 @@ from operation import *
 #Query user for input, exit will be string "exit"#
 ##################################################
 op = ""
-again = ""
-while (again != "exit" or again != "exit "):
+while (op != "exit" and op != "exit "):
 	op = raw_input("Enter an operation for perform use \"help\" to get a list of tools and \"exit\" to end: ")
 	if(op!="exit"):
-		operating(op)
-if(again=="exit" or again=="exit "):
+		print operating(op)
+if(op=="exit" or op=="exit "):
 	print "Thank you, see you soon!"
 	sys.exit(0)
