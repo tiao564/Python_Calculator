@@ -6,8 +6,6 @@ answer = 0
 def operating(op):
 	if (op=="+" or op=="+ " or op==" +"):
 		a=get_First_Num()
-		if(a=="a" or a=="A"):
-			a=answer
 		b=get_Second_Num()
 		answer=a+b
 		last_op = op
@@ -15,8 +13,6 @@ def operating(op):
 
 	elif (op=="-" or op=="- " or op==" -"):
 		a=get_First_Num()
-		if(a=="a" or a=="A"):
-			a=answer
 		b=get_Second_Num()
 		answer=a-b
 		last_op = op
@@ -24,8 +20,6 @@ def operating(op):
 
 	elif (op=="*" or op=="* " or op==" *"):
 		a=get_First_Num()
-		if(a=="a" or a=="A"):
-			a=answer
 		b=get_Second_Num()
 		answer=a*b
 		last_op = op
@@ -33,8 +27,6 @@ def operating(op):
 
 	elif (op=="/" or op=="/ " or op==" /"):
 		a=get_First_Num()
-		if(a=="a" or a=="A"):
-			a=answer
 		b=get_Second_Num()
 		answer=a/b
 		last_op = op
@@ -60,10 +52,23 @@ def operating(op):
 
 
 def get_First_Num():
-	a = input("Enter first number to operate on: ")
-	return a
+	a = raw_input("Enter first number to operate on: ")
+	if(a=="a" or a=="a " or a=="A" or a=="A "):
+		return answer
+	elif(a!="a" and a!="a " and a!="A" and a!="A "):
+		print "You did not put in a valid input\n"
+		get_First_Num()
+	else:
+		a=float(a)
+		return a
 
 def get_Second_Num():
-	b = input("Enter second number: ")
-	return b
-
+	b = raw_input("Enter first number to operate on: ")
+	if(a=="a" or a=="a " or a=="A" or a=="A "):
+		return answer
+	elif(b!="a" and b!="a " and b!="A" and b!="A "):
+		print "You did not put in a valid input\n"
+		get_Second_Num()
+	else:
+		b=float(b)
+		return b
