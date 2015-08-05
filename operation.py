@@ -54,21 +54,23 @@ def operating(op):
 def get_First_Num():
 	a = raw_input("Enter first number to operate on: ")
 	if(a=="a" or a=="a " or a=="A" or a=="A "):
-		return answer
-	elif(a!="a" and a!="a " and a!="A" and a!="A "):
-		print "You did not put in a valid input\n"
-		get_First_Num()
-	else:
-		a=float(a)
-		return a
+            return answer
+        else:
+            try:
+                a=float(a)
+            except ValueError:
+                print "Oops, that's not a valid operation or number, try again. \n"
+                a=get_First_Num()
+        return a
 
 def get_Second_Num():
 	b = raw_input("Enter first number to operate on: ")
-	if(a=="a" or a=="a " or a=="A" or a=="A "):
-		return answer
-	elif(b!="a" and b!="a " and b!="A" and b!="A "):
-		print "You did not put in a valid input\n"
-		get_Second_Num()
-	else:
-		b=float(b)
-		return b
+	if(b=="a" or b=="a " or b=="A" or b=="A "):
+            return answer
+        else:
+            try:
+                b=float(b)
+            except ValueError:
+                print "Oops, that's not a valid operation or number, try again.\n"
+                b=get_Second_Num()
+        return b
