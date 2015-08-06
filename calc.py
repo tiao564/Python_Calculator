@@ -19,17 +19,19 @@ from operation import *
 op = ""
 last_op =""
 answer = 0
-print "Welcome! Use the calculator to do what you need, type \"help\" to get a list of commands.\n"
+print "Welcome! Use the calculator to do what you need, type \"help\" to get a list of commands. Type \"exit\" to exit the program.\n"
 while (op != "exit" and op != "exit "):
 	last_op=op
 	a = get_First_Num(answer)
 	if(a=="d" or a=="d " or a=="D" or a=="D  "):
             answer = operation(last_op,answer,answer)
-            print answer
+            print"{}".format(answer)
+            print "_____________\n"
         else:
-	    op = raw_input("Enter an operation to perform: ")
+	    op = raw_input("op: ")
 	    answer=operation(op,a,answer)
-            print answer
+            print "{}".format(answer)
+            print "_____________\n"
 if(op=="exit" or op=="exit "):
 	print "Thank you, see you soon!"
 	sys.exit(0)

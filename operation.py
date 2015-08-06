@@ -44,7 +44,10 @@ def operation(op,a,answer):
                return answer
 
         elif(op=="square root" or op=="square root "):
-                answer=a**(0.5)
+                try:
+                    answer=a**(0.5)
+                except ValueError:
+                    print "cannot take square root of negative."
                 return answer
 
 	elif (op=="help" or op=="Help" or op=="help " or op=="Help "):  #help function
@@ -65,7 +68,7 @@ def operation(op,a,answer):
 #define inputs for user numbers#
 ################################
 def get_First_Num(answer):
-	a = raw_input("Enter first number to operate on: ")
+	a = raw_input("A: ")
 	if(a=="a" or a=="a " or a=="A" or a=="A "):                 #allows for last answer to be used again
             return answer
 	if(a=="d" or a=="d " or a=="D" or a=="D "):
@@ -85,7 +88,7 @@ def get_First_Num(answer):
         return a
 
 def get_Second_Num(answer):
-	b = raw_input("Enter second number to operate on: ")
+	b = raw_input("B: ")
         if(b=="a" or b=="a " or b=="A" or b=="A "):                 #allows for last answer to be used
             b = answer
             return b
@@ -108,10 +111,13 @@ def get_Second_Num(answer):
 #########################################
 def helping():
 	print "List of commands: "
-        print "   +: addition on two numbers"
-        print "   -: subtraction on two numbers"
-        print "   *: multiplication on two numbers"
-        print "   /: devision on two numbers"
-        print "   d: performs last operation again using last answer and a new input"
-        print "   a: *when asked for first number* uses last answer for a"
-        print "exit: leaves program\n"
+        print "          +: addition on two numbers a+b"
+        print "          -: subtraction on two numbers a-b"
+        print "          *: multiplication on two numbers a*b"
+        print "          /: devision on two numbers a/b"
+        print "          ^: power first raised to the second a^b"
+        print "          %: mod of two numbers, gives remainder a%b"
+        print "square root: square root of a number b^(1/2)"
+        print "          d: performs last operation again using last answer and a new input"
+        print "          a: *when asked for first number* uses last answer for a"
+        print "       exit: leaves program\n"
