@@ -5,6 +5,7 @@
 #Import class for exit function#
 ################################
 import sys
+import math
 ############
 #Variables?#
 ############
@@ -13,26 +14,38 @@ last_op = ""
 #define different operations that the calc and preform#
 #######################################################
 def operation(op,a,answer):
-	b=get_Second_Num(answer)
 	if (op=="+" or op=="+ " or op==" +"):       #addition
+                b=get_Second_Num(answer)
 		answer=a+b
-		last_op = op
 		return answer
 
 	elif (op=="-" or op=="- " or op==" -"):     #subtraction
+                b=get_Second_Num(answer)
 		answer=a-b
-		last_op = op
 		return answer
 
 	elif (op=="*" or op=="* " or op==" *"):     #multiplication
-		answer=a*b
-		last_op = op
+                b=get_Second_Num(answer)
+                answer=a*b
 		return answer
 
 	elif (op=="/" or op=="/ " or op==" /"):     #devision
-		answer=a/b
-		last_op = op
+                b=get_Second_Num(answer)
+                answer=a/b
 		return answer
+        elif (op=="%" or op=="% " or op==" %"):     #modulo
+                b=get_Second_Num(answer)
+                answer=a%b
+                return answer
+
+        elif(op=="^" or op=="^ " or op==" ^"):      #power
+               b=get_Second_Num(answer)
+               answer=a**b
+               return answer
+
+        elif(op=="square root" or op=="square root "):
+                answer=a**(0.5)
+                return answer
 
 	elif (op=="help" or op=="Help" or op=="help " or op=="Help "):  #help function
                 helping()
