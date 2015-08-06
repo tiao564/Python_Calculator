@@ -55,6 +55,8 @@ def get_First_Num(answer):
 	a = raw_input("Enter first number to operate on: ")
 	if(a=="a" or a=="a " or a=="A" or a=="A "):                 #allows for last answer to be used again
             return answer
+	if(a=="d" or a=="d " or a=="D" or a=="D "):
+	    return "d"
 	elif (a=="help" or a=="Help" or a=="help " or a=="Help "):  #help function
             helping()
             a = get_First_Num(answer)
